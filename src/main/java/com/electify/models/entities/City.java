@@ -1,7 +1,7 @@
 package com.electify.models.entities;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,10 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SuperBuilder
 @NoArgsConstructor
-public class PartyAdvisor extends User {
-    @OneToOne
-    private PartyBranch partyBranch;
+public class City extends AbstractEntity {
+    private String name;
+    @ManyToOne
+    private Region region;
+    @ManyToOne
+    private Constituency constituency;
 }

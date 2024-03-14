@@ -2,7 +2,6 @@ package com.electify.models.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,7 +12,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SuperBuilder
 @NoArgsConstructor
-public class PartyAdvisor extends User {
-    @OneToOne
-    private PartyBranch partyBranch;
+public class Chair extends AbstractEntity {
+    @OneToOne(mappedBy = "chair")
+    private CandidateChairlink candidateChairLink;
 }

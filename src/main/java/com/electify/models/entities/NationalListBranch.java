@@ -16,11 +16,11 @@ import java.util.List;
 @Entity
 @SuperBuilder
 @NoArgsConstructor
-public class Candidate extends User {
-    @OneToOne(mappedBy = "candidate")
-    private CandidateChairlink candidateChairlink;
-    @OneToOne(mappedBy = "candidate")
-    private Candidacy candidacy;
+public class NationalListBranch extends AbstractEntity {
     @ManyToOne
-    private PartyBranch partyBranch;
+    private NationalList nationalList;
+    @OneToOne
+    private Region region;
+    @OneToMany(mappedBy = "nationalListBranch")
+    private List<Candidacy> candidacies;
 }

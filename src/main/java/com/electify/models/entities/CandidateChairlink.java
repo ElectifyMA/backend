@@ -1,8 +1,9 @@
 package com.electify.models.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,7 +14,11 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SuperBuilder
 @NoArgsConstructor
-public class PartyAdvisor extends User {
+public class CandidateChairlink extends AbstractEntity {
     @OneToOne
-    private PartyBranch partyBranch;
+    private Candidate candidate;
+    @OneToOne
+    private Chair chair;
+    @ManyToOne
+    private Election election;
 }

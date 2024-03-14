@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,11 +17,13 @@ import java.util.List;
 @Entity
 @SuperBuilder
 @NoArgsConstructor
-public class Candidate extends User {
-    @OneToOne(mappedBy = "candidate")
-    private CandidateChairlink candidateChairlink;
-    @OneToOne(mappedBy = "candidate")
-    private Candidacy candidacy;
+public class PartyBranch extends AbstractEntity {
+    @OneToOne(mappedBy = "partyBranch")
+    private PartyAdvisor partyAdvisor;
     @ManyToOne
-    private PartyBranch partyBranch;
+    private PoliticalParty politicalParty;
+    @ManyToOne
+    private Constituency constituency;
+    @OneToMany(mappedBy = "partyBranch")
+    private List<Candidate> candidates;
 }

@@ -1,6 +1,7 @@
 package com.electify.models.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,5 +14,6 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 public class Voter extends User {
-
+    @OneToOne(mappedBy = "voter")
+    private Vote vote;
 }
