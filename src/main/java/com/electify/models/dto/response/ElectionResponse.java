@@ -25,8 +25,9 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ElectionResponse extends AbstractResponse {
     @NotNull(message = "date cannot be null")
+    @Date
     private String date;
-    @NotBlank(message = "duration cannot be blank")
+    @NotNull(message = "duration cannot be blank")
     private Integer duration;
     @NotNull(message = "election type cannot be null")
     private ElectionType type;
