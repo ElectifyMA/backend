@@ -1,6 +1,7 @@
 package com.electify.models.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +18,9 @@ import java.util.UUID;
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AbstractRequest implements _Request<UUID> {
-
+    /**
+     * The unique identifier of the entity.
+     */
     private UUID id;
 
     /**
