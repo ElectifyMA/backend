@@ -30,7 +30,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ModularException.class)
     public ResponseEntity<Map<String, String>> handleModularException(ModularException ex) {
-        return new ResponseEntity<>(Map.of("message", ex.getMessage()), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(Map.of("message", ex.getMessage()), ex.getStatus());
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
