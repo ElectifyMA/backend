@@ -15,7 +15,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/elections")
+@RequestMapping("api/v1/election")
 public class ElectionController extends _Controller<UUID, ElectionRequest, ElectionResponse, ElectionService>{
 
 }
