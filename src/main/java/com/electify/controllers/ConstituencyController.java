@@ -1,8 +1,8 @@
 package com.electify.controllers;
 
-import com.electify.models.dto.request.ElectionRequest;
-import com.electify.models.dto.response.ElectionResponse;
-import com.electify.services.impl.ElectionService;
+import com.electify.models.dto.request.ConstituencyRequest;
+import com.electify.models.dto.response.ConstituencyResponse;
+import com.electify.services.impl.ConstituencyService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
@@ -15,7 +15,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/election")
-public class ElectionController extends _Controller<UUID, ElectionRequest, ElectionResponse, ElectionService>{
+@RequestMapping("api/v1/constituency")
+public class ConstituencyController extends _Controller<UUID, ConstituencyRequest, ConstituencyResponse, ConstituencyService> {
 
 }

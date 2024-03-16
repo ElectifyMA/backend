@@ -1,5 +1,6 @@
 package com.electify.models.dto.response;
 
+import com.electify.models.dto.basic.ConstituencyBasic;
 import com.electify.models.entities.Constituency;
 import com.electify.models.entities.NationalList;
 import com.electify.models.entities.PoliticalParty;
@@ -34,6 +35,6 @@ public class ElectionResponse extends AbstractResponse {
     @NotNull(message = "election status cannot be null")
     private ElectionStatus status;
     private List<NationalList> nationalListList;
-    private List<Constituency> constituencies;
+    private List<ConstituencyBasic> constituencies; // Using basic dto to eliminate jackson serialisation errors
     private List<PoliticalParty> politicalParties;
 }

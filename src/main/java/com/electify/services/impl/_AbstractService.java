@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
@@ -91,7 +92,7 @@ public abstract class _AbstractService<ID, Req extends _Request<ID>, Res extends
             return Optional.of(mapper.toResponse(createdEntity));
         } catch (Exception e) {
             String entityToCreateName = entityToCreate.getClass().getSimpleName();
-            throw new ModularException("an error occurred while creating " + entityToCreateName + ", " + e.getMessage());
+            throw new ModularException("an error occurred while creating " + entityToCreateName + ", " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -111,7 +112,7 @@ public abstract class _AbstractService<ID, Req extends _Request<ID>, Res extends
             return Optional.of(mapper.toResponse(updatedEntity));
         } catch (Exception e) {
             String entityToUpdateName = entityToUpdate.getClass().getSimpleName();
-            throw new ModularException("an error occurred while updating " + entityToUpdateName + ", " + e.getMessage());
+            throw new ModularException("an error occurred while updating " + entityToUpdateName + ", " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -141,12 +142,12 @@ public abstract class _AbstractService<ID, Req extends _Request<ID>, Res extends
         String entityToDeleteName = entityToDelete.getClass().getSimpleName();
 
         if (!repository.existsById(entityToDelete.getId())) {
-            throw new ModularException(entityToDeleteName + " not found with id: " + entityToDelete.getId());
+            throw new ModularException(entityToDeleteName + " not found with id: " + entityToDelete.getId(), HttpStatus.NOT_FOUND);
         }
         try {
             repository.delete(entityToDelete);
         } catch (Exception e) {
-            throw new ModularException("an error occurred while deleting " + entityToDeleteName + ", " + e.getMessage());
+            throw new ModularException("an error occurred while deleting " + entityToDeleteName + ", " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return true;
     }

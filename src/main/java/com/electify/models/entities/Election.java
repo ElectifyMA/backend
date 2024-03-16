@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -24,8 +26,10 @@ public class Election extends AbstractEntity {
     @Enumerated(EnumType.STRING)
     private ElectionStatus status;
     @OneToMany(mappedBy = "election")
+    @Cascade(CascadeType.DELETE_ORPHAN)
     private List<NationalList> nationalListList;
     @OneToMany(mappedBy = "election")
+    @Cascade(CascadeType.DELETE_ORPHAN)
     private List<Constituency> constituencies;
     @ManyToMany
     @JoinTable(
