@@ -2,6 +2,7 @@ package com.electify.models.dto.response;
 
 import com.electify.models.entities.AbstractEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,12 +29,12 @@ public abstract class AbstractResponse implements _Response<UUID> {
     /**
      * The unique identifier of the entity.
      */
+    @NotNull(message = "id cannot be null")
     private UUID id;
-
     /**
      * The timestamp when the entity was created.
      */
-     private Timestamp createdAt;
+    private Timestamp createdAt;
 
     /**
      * The timestamp when the entity was last updated.
