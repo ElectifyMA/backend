@@ -1,6 +1,6 @@
 package com.electify.models.dto.response;
 
-import com.electify.models.entities.City;
+import com.electify.models.dto.basic.CityBasic;
 import com.electify.models.entities.NationalListBranch;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -19,6 +19,6 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RegionResponse extends AbstractResponse {
     private String name;
-    private List<City> cities;
+    private List<CityBasic> cities;
     private NationalListBranch nationalListBranch;
 }
