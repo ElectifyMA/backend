@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Getter
@@ -16,8 +17,9 @@ import java.util.List;
 @SuperBuilder
 @NoArgsConstructor
 public class NationalList extends AbstractEntity {
-    @OneToMany(mappedBy = "nationalList")
-    private List<NationalListBranch> branches;
+    private LocalDate date;
     @ManyToOne
     private Election election;
+    @OneToMany(mappedBy = "nationalList")
+    private List<NationalListBranch> branches;
 }
