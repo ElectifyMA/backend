@@ -1,14 +1,12 @@
 package com.electify.models.dto.response;
 
 import com.electify.models.dto.basic.ConstituencyBasic;
-import com.electify.models.entities.Constituency;
-import com.electify.models.entities.NationalList;
+import com.electify.models.dto.basic.NationalListBasic;
 import com.electify.models.entities.PoliticalParty;
 import com.electify.models.enums.ElectionStatus;
 import com.electify.models.enums.ElectionType;
 import com.electify.validation.annotations.Date;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,7 +32,7 @@ public class ElectionResponse extends AbstractResponse {
     private ElectionType type;
     @NotNull(message = "election status cannot be null")
     private ElectionStatus status;
-    private List<NationalList> nationalListList;
+    private List<NationalListBasic> nationalListList;
     private List<ConstituencyBasic> constituencies; // Using basic dto to eliminate jackson serialisation errors
     private List<PoliticalParty> politicalParties;
 }

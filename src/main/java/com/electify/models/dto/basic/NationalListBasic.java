@@ -1,7 +1,5 @@
 package com.electify.models.dto.basic;
 
-import com.electify.models.enums.ElectionStatus;
-import com.electify.models.enums.ElectionType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,9 +13,6 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ElectionBasic extends AbstractBasic {
+public class NationalListBasic extends AbstractBasic {
     private String date;
-    private Integer duration;
-    private ElectionType type;
-    private ElectionStatus status;
 }

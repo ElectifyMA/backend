@@ -1,8 +1,8 @@
 package com.electify.mappers;
 
-import com.electify.models.dto.request.ElectionRequest;
-import com.electify.models.dto.response.ElectionResponse;
-import com.electify.models.entities.Election;
+import com.electify.models.dto.request.NationalListRequest;
+import com.electify.models.dto.response.NationalListResponse;
+import com.electify.models.entities.NationalList;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
@@ -15,6 +15,6 @@ import java.util.UUID;
         injectionStrategy = InjectionStrategy.CONSTRUCTOR,
         componentModel = MappingConstants.ComponentModel.SPRING
 )
-public interface ElectionMapper extends _Mapper<UUID, ElectionRequest, ElectionResponse, Election> {
+public interface NationalListMapper extends _Mapper<UUID, NationalListRequest, NationalListResponse, NationalList> {
 
 }

@@ -1,12 +1,10 @@
 package com.electify.models.dto.response;
 
 import com.electify.models.dto.basic.ElectionBasic;
-import com.electify.models.entities.*;
-import com.electify.models.enums.ElectionStatus;
-import com.electify.models.enums.ElectionType;
-import com.electify.validation.annotations.Date;
+import com.electify.models.entities.Candidacy;
+import com.electify.models.entities.City;
+import com.electify.models.entities.PartyBranch;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
