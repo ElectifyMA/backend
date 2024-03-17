@@ -1,6 +1,7 @@
 package com.electify.models.dto.response;
 
 import com.electify.models.dto.basic.ElectionBasic;
+import com.electify.models.dto.basic.NationalListBranchBasic;
 import com.electify.models.entities.NationalListBranch;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -20,5 +21,5 @@ import java.util.List;
 public class NationalListResponse extends AbstractResponse {
     private String date;
     private ElectionBasic election;
-    private List<NationalListBranch> branches;
+    private List<NationalListBranchBasic> branches;
 }
