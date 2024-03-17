@@ -5,6 +5,6 @@ import com.electify.models.dto.response.NationalListResponse;
 
 import java.util.UUID;
 
-public interface INationalList extends _Service<UUID, NationalListRequest, NationalListResponse> {
+public interface INationalListService extends _Service<UUID, NationalListRequest, NationalListResponse> {
 
 }
