@@ -3,7 +3,6 @@ package com.electify.models.dto.basic;
 import com.electify.models.enums.ElectionStatus;
 import com.electify.models.enums.ElectionType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
