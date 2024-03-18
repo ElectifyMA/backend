@@ -16,7 +16,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class NationalListRequest extends AbstractRequest {
+public class NationalListRequest extends _AbstractRequest {
     @NotNull(message = "date cannot be null")
     @Date
     private String date;
