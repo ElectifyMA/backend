@@ -13,6 +13,6 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class NationalListBranchBasic extends AbstractBasic {
+public class NationalListBranchBasic extends _AbstractBasic {
     private int chairsCount;
 }
