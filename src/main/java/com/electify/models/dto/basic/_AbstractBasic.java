@@ -16,7 +16,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AbstractBasic {
+public class _AbstractBasic implements _Basic<UUID> {
     /**
      * The unique identifier of the entity.
      */
