@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CityResponse extends AbstractResponse {
+public class CityResponse extends _AbstractResponse {
     private String name;
     private RegionBasic region;
     private ConstituencyBasic constituency;

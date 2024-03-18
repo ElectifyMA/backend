@@ -22,7 +22,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ElectionResponse extends AbstractResponse {
+public class ElectionResponse extends _AbstractResponse {
     @NotNull(message = "date cannot be null")
     @Date
     private String date;

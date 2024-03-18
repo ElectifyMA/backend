@@ -17,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RegionResponse extends AbstractResponse {
+public class RegionResponse extends _AbstractResponse {
     private String name;
     private List<CityBasic> cities;
     private NationalListBranchBasic nationalListBranch;

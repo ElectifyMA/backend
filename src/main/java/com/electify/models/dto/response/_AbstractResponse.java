@@ -25,7 +25,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class AbstractResponse implements _Response<UUID> {
+public abstract class _AbstractResponse implements _Response<UUID> {
     /**
      * The unique identifier of the entity.
      */
