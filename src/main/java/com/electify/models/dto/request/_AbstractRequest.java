@@ -1,4 +1,4 @@
-package com.electify.models.dto.basic;
+package com.electify.models.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -16,15 +16,17 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AbstractBasic {
+public class _AbstractRequest implements _Request<UUID> {
     /**
      * The unique identifier of the entity.
      */
     private UUID id;
+
     /**
      * The timestamp when the entity was created.
      */
     private Timestamp createdAt;
+
     /**
      * The timestamp when the entity was last updated.
      */

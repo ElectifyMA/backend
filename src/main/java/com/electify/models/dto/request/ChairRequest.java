@@ -2,7 +2,6 @@ package com.electify.models.dto.request;
 
 import com.electify.validation.annotations.Date;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ChairRequest extends AbstractRequest {
+public class ChairRequest extends _AbstractRequest {
     @NotNull(message = "date cannot be null")
     @Date
     private String date;

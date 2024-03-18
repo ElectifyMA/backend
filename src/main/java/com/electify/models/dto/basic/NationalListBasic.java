@@ -13,6 +13,6 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class NationalListBasic extends AbstractBasic {
+public class NationalListBasic extends _AbstractBasic {
     private String date;
 }

@@ -13,6 +13,6 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RegionBasic extends AbstractBasic {
+public class RegionBasic extends _AbstractBasic {
     private String name;
 }

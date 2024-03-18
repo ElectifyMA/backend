@@ -17,7 +17,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CityRequest extends AbstractRequest {
+public class CityRequest extends _AbstractRequest {
     @NotBlank(message = "name cannot be blank")
     private String name;
     @NotNull(message = "region cannot be null")

@@ -13,7 +13,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ConstituencyBasic extends AbstractBasic {
+public class ConstituencyBasic extends _AbstractBasic {
     private String name;
     private Integer chairsCount;
 }

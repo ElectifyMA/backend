@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ChairResponse extends AbstractResponse {
+public class ChairResponse extends _AbstractResponse {
     private LocalDate date;
     private CandidateChairlink candidateChairLink;
 }

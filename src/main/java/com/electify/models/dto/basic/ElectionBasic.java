@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ElectionBasic extends AbstractBasic {
+public class ElectionBasic extends _AbstractBasic {
     private String date;
     private Integer duration;
     private ElectionType type;

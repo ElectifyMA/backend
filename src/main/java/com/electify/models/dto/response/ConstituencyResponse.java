@@ -20,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ConstituencyResponse extends AbstractResponse {
+public class ConstituencyResponse extends _AbstractResponse {
     @NotNull(message = "name cannot be null")
     private String name;
     @NotNull(message = "chairs count cannot be null")

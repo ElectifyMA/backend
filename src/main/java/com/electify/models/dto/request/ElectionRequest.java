@@ -17,7 +17,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ElectionRequest extends AbstractRequest {
+public class ElectionRequest extends _AbstractRequest {
     @NotNull(message = "date cannot be null")
     @Date
     private String date;

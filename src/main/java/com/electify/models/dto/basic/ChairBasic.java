@@ -15,6 +15,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ChairBasic extends AbstractBasic {
+public class ChairBasic extends _AbstractBasic {
     private LocalDate date;
 }

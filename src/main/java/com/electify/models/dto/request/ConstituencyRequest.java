@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ConstituencyRequest extends AbstractRequest {
+public class ConstituencyRequest extends _AbstractRequest {
     @NotBlank(message = "name cannot be blank")
     private String name;
     @NotNull(message = "chairs count cannot be null")
