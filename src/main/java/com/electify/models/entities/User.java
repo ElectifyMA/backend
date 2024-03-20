@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import org.hibernate.validator.constraints.UniqueElements;
 
 import java.time.LocalDate;
 
@@ -29,5 +28,6 @@ public class User extends AbstractEntity {
     private String address;
     @Column(columnDefinition = "BOOLEAN DEFAULT true")
     private boolean isActive;
+    @Enumerated(EnumType.STRING)
     private Role role;
 }

@@ -1,12 +1,13 @@
 package com.electify.models.dto.auth;
 
 import com.electify.models.entities.User;
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
-import lombok.experimental.SuperBuilder;
 
 import java.util.Collection;
 import java.util.Collections;
