@@ -3,7 +3,9 @@ package com.electify.models.dto.auth;
 import com.electify.models.enums.Role;
 import com.electify.validation.annotations.Cin;
 import com.electify.validation.annotations.Date;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Getter
