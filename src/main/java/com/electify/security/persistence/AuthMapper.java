@@ -9,8 +9,6 @@ import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.ReportingPolicy;
-import org.mapstruct.control.MappingControl;
-import org.springframework.security.core.userdetails.UserDetails;
 
 @Mapper(
         unmappedTargetPolicy = ReportingPolicy.WARN,
