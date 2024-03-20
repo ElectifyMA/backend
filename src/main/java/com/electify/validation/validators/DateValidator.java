@@ -3,7 +3,6 @@ package com.electify.validation.validators;
 import com.electify.validation.annotations.Date;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import org.springframework.dao.DataIntegrityViolationException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
