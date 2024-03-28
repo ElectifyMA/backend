@@ -1,14 +1,10 @@
 package com.electify.models.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-
-import java.util.List;
 
 @Getter
 @Setter
@@ -22,6 +18,7 @@ public class PoliticalParty extends AbstractEntity {
     private ChairDivision chairDivision;
     @OneToOne
     private PartyPresident partyPresident;
-    @ManyToMany(mappedBy = "politicalParties")
-    private List<Election> elections;
+    @ManyToOne()
+    @JoinColumn(nullable = false)
+    private Election election;
 }
