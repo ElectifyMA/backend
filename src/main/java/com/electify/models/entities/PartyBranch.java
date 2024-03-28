@@ -17,7 +17,7 @@ import java.util.List;
 @SuperBuilder
 @NoArgsConstructor
 public class PartyBranch extends AbstractEntity {
-    @OneToOne(mappedBy = "partyBranch")
+    @OneToOne
     private PartyAdvisor partyAdvisor;
     @ManyToOne
     private PoliticalParty politicalParty;
