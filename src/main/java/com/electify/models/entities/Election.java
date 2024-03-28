@@ -31,11 +31,6 @@ public class Election extends AbstractEntity {
     @OneToMany(mappedBy = "election")
     @Cascade(CascadeType.DELETE_ORPHAN)
     private List<Constituency> constituencies;
-    @ManyToMany
-    @JoinTable(
-            name = "election_political_party",
-            joinColumns = @JoinColumn(name = "election_id"),
-            inverseJoinColumns = @JoinColumn(name = "political_party_id")
-    )
+    @OneToMany
     private List<PoliticalParty> politicalParties;
 }
