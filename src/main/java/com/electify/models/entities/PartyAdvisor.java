@@ -15,6 +15,6 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @PrimaryKeyJoinColumn(name = "user_id")
 public class PartyAdvisor extends User {
-    @OneToOne
+    @OneToOne(mappedBy = "partyAdvisor")
     private PartyBranch partyBranch;
 }
