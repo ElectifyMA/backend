@@ -3,12 +3,11 @@ package com.electify.models.dto.response;
 import com.electify.models.dto.basic.CandidateBasic;
 import com.electify.models.dto.basic.ConstituencyBasic;
 import com.electify.models.dto.basic.NationalListBranchBasic;
-import com.electify.models.entities.Candidate;
-import com.electify.models.entities.Constituency;
-import com.electify.models.entities.NationalListBranch;
-import com.electify.models.entities.Vote;
+import com.electify.models.dto.basic.VoterBasic;
 import com.electify.models.enums.CandidacyType;
+import com.electify.serializers.ListLengthSerializer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,5 +27,6 @@ public class CandidacyResponse extends _AbstractResponse {
     private CandidateBasic candidate;
     private ConstituencyBasic constituency;
     private NationalListBranchBasic nationalListBranch;
-    private List<Vote> votes;
+    @JsonSerialize(using = ListLengthSerializer.class)
+    private List<VoterBasic> votes;
 }
