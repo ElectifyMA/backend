@@ -1,9 +1,5 @@
-package com.electify.models.dto.response;
+package com.electify.models.dto.basic;
 
-import com.electify.models.dto.basic.CandidateBasic;
-import com.electify.models.dto.basic.ConstituencyBasic;
-import com.electify.models.dto.basic.NationalListBranchBasic;
-import com.electify.models.dto.basic.VoterBasic;
 import com.electify.models.enums.CandidacyType;
 import com.electify.serializers.ListLengthSerializer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -22,11 +18,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CandidacyResponse extends _AbstractResponse {
+public class CandidacyBasic extends _AbstractBasic {
     private CandidacyType type;
-    private CandidateBasic candidate;
-    private ConstituencyBasic constituency;
-    private NationalListBranchBasic nationalListBranch;
     @JsonSerialize(using = ListLengthSerializer.class)
     private List<VoterBasic> votes;
 }
