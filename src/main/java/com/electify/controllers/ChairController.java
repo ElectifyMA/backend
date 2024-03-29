@@ -15,7 +15,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/chair")
+@RequestMapping("api/${version}/chair")
 public class ChairController extends _Controller<UUID, ChairRequest, ChairResponse, ChairService> {
 
 }
