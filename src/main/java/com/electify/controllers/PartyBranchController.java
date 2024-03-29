@@ -15,7 +15,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/party-branch")
+@RequestMapping("api/${version}/party-branch")
 public class PartyBranchController extends _Controller<UUID, PartyBranchRequest, PartyBranchResponse, PartyBranchService> {
 
 }
