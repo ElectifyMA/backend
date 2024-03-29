@@ -15,7 +15,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/national-list")
+@RequestMapping("api/${version}/national-list")
 public class NationalListController extends _Controller<UUID, NationalListRequest, NationalListResponse, NationalListService> {
 
 }
