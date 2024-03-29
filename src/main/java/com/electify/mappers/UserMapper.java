@@ -1,5 +1,8 @@
-package com.electify.mappers.auth;
+package com.electify.mappers;
 
+import com.electify.models.dto.auth.Registration;
+import com.electify.models.dto.request.UserRequest;
+import com.electify.models.dto.response.UserResponse;
 import com.electify.models.entities.User;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
@@ -13,6 +16,6 @@ import java.util.UUID;
         injectionStrategy = InjectionStrategy.CONSTRUCTOR,
         componentModel = MappingConstants.ComponentModel.SPRING
 )
-public interface UserMapper extends AuthMapper<UUID, User> {
-
+public interface UserMapper extends _Mapper<UUID, UserRequest, UserResponse, User> {
+    User toEntity(Registration registration);
 }
