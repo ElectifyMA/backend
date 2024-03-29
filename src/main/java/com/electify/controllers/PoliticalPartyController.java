@@ -15,7 +15,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/political-party")
+@RequestMapping("api/${version}/political-party")
 public class PoliticalPartyController extends _Controller<UUID, PoliticalPartyRequest, PoliticalPartyResponse, PoliticalPartyService> {
 
 }
