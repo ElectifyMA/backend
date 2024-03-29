@@ -15,7 +15,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/region")
+@RequestMapping("api/${version}/region")
 public class RegionController extends _Controller<UUID, RegionRequest, RegionResponse, RegionService> {
 
 }

@@ -15,7 +15,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/city")
+@RequestMapping("api/${version}/city")
 public class CityController extends _Controller<UUID, CityRequest, CityResponse, CityService> {
     
 }

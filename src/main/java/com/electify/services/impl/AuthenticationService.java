@@ -1,6 +1,7 @@
 package com.electify.services.impl;
 
 import com.electify.exceptions.customs.ModularException;
+import com.electify.mappers.UserMapper;
 import com.electify.mappers.auth.*;
 import com.electify.models.dto.auth.AuthUser;
 import com.electify.models.dto.auth.Connection;

@@ -22,5 +22,5 @@ public class NationalListBranchResponse extends _AbstractResponse {
     private int chairsCount;
     private RegionBasic region;
     private NationalListBasic nationalList;
-    private List<Candidacy> candidacies;
+    private List<CandidacyResponse> candidacies;
 }

@@ -20,7 +20,7 @@ import java.util.Map;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/auth")
+@RequestMapping("api/${version}/auth")
 public class AuthenticationController {
     private final AuthenticationService authenticationService;
 

@@ -1,8 +1,8 @@
 package com.electify.controllers;
 
-import com.electify.models.dto.request.NationalListRequest;
-import com.electify.models.dto.response.NationalListResponse;
-import com.electify.services.impl.NationalListService;
+import com.electify.models.dto.request.UserRequest;
+import com.electify.models.dto.response.UserResponse;
+import com.electify.services.impl.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
@@ -15,7 +15,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/${version}/national-list")
-public class NationalListController extends _Controller<UUID, NationalListRequest, NationalListResponse, NationalListService> {
+@RequestMapping("api/${version}/users")
+public class UserController extends _Controller<UUID, UserRequest, UserResponse, UserService> {
 
 }

@@ -15,7 +15,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/constituency")
+@RequestMapping("api/${version}/constituency")
 public class ConstituencyController extends _Controller<UUID, ConstituencyRequest, ConstituencyResponse, ConstituencyService> {
 
 }
