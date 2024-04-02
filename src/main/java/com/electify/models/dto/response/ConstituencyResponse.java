@@ -2,8 +2,8 @@ package com.electify.models.dto.response;
 
 import com.electify.models.dto.basic.CityBasic;
 import com.electify.models.dto.basic.ElectionBasic;
+import com.electify.models.dto.basic.PartyBranchBasic;
 import com.electify.models.entities.Candidacy;
-import com.electify.models.entities.PartyBranch;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -28,6 +28,6 @@ public class ConstituencyResponse extends _AbstractResponse {
     @NotNull(message = "election cannot be null")
     private ElectionBasic election;
     private List<CityBasic> cities;
-    private List<PartyBranch> partyBranches;
+    private List<PartyBranchBasic> partyBranches;
     private List<Candidacy> candidacies;
 }
