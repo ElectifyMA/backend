@@ -57,12 +57,10 @@ public class AuthenticationService implements IAuthenticationService {
     @Override
     public UserResponse register(Registration registration) {
         try {
-            User userToCreate = userMapper.toEntity(registration);
-            userToCreate.setPassword(passwordEncoder.encode(registration.getPassword()));
-
+            registration.setPassword(passwordEncoder.encode(registration.getPassword()));
             return authMapper.toResponse(insertUserBasedOnRole(registration));
         } catch (DataIntegrityViolationException e) {
-            throw new ModularException("Violated unique constraint (cin code or email address)", HttpStatus.BAD_REQUEST);
+            throw new ModularException(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -71,7 +69,7 @@ public class AuthenticationService implements IAuthenticationService {
         var user = authenticationProvider.authenticate(new UsernamePasswordAuthenticationToken(connection.getEmail(), connection.getPassword()));
         var userDetails = (AuthUser) user.getPrincipal();
         var fullName = userDetails.getUser().getFirstName() + " " + userDetails.getUser().getLastName();
-        return jwtService.generateToken(userDetails, Map.of("name", fullName));
+        return jwtService.generateToken(userDetails, Map.of("username", fullName));
     }
 
     private User insertUserBasedOnRole(Registration registration) {
@@ -89,6 +87,8 @@ public class AuthenticationService implements IAuthenticationService {
                 return adminRepository.save(admin);
             case CANDIDATE:
                 Candidate candidate = candidateMapper.toEntity(registration);
+                if (registration.getPartyBranch() == null)
+                    throw new ModularException("party branch cannot be null", HttpStatus.BAD_REQUEST);
                 return candidateRepository.save(candidate);
             case SUPER_ADMIN:
                 SuperAdmin superAdmin = superAdminMapper.toEntity(registration);
@@ -106,5 +106,4 @@ public class AuthenticationService implements IAuthenticationService {
                 return userRepository.save(userMapper.toEntity(registration));
         }
     }
-
 }
