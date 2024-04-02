@@ -1,6 +1,6 @@
 package com.electify.models.dto.response;
 
-import com.electify.models.entities.User;
+import com.electify.models.dto.basic.UserBasic;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,5 +18,5 @@ public class PoliticalPartyResponse extends _AbstractResponse {
     private String name;
     private String logo;
     private ElectionResponse election;
-    private User partyPresident;
+    private UserBasic partyPresident;
 }
