@@ -1,5 +1,6 @@
 package com.electify.models.dto.auth;
 
+import com.electify.models.dto.response.PartyBranchResponse;
 import com.electify.models.enums.Role;
 import com.electify.validation.annotations.Cin;
 import com.electify.validation.annotations.Date;
@@ -13,6 +14,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Registration {
     @NotBlank(message = "First name is required")
     private String firstName;
@@ -32,4 +34,5 @@ public class Registration {
     private String address;
     @NotNull(message = "Role is required")
     private Role role;
+    private PartyBranchResponse partyBranch;
 }
