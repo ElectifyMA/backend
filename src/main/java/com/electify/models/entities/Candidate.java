@@ -1,9 +1,6 @@
 package com.electify.models.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,5 +18,6 @@ public class Candidate extends User {
     @OneToOne(mappedBy = "candidate")
     private Candidacy candidacy;
     @ManyToOne
+    @JoinColumn(nullable = false)
     private PartyBranch partyBranch;
 }
