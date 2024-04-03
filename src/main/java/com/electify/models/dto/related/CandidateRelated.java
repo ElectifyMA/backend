@@ -1,35 +1,30 @@
-package com.electify.models.entities;
+package com.electify.models.dto.related;
 
 import com.electify.models.enums.Role;
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
 
 @Getter
 @Setter
-@Entity
 @SuperBuilder
+@AllArgsConstructor
 @NoArgsConstructor
-@Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "_user")
-@ToString(callSuper = true)
-public class User extends AbstractEntity {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class CandidateRelated {
     private String firstName;
     private String lastName;
-    @Column(unique = true)
     private String email;
     private String password;
-    @Column(unique = true)
     private String cin;
     private LocalDate birthDate;
     private String address;
-    @Column(columnDefinition = "BOOLEAN DEFAULT true")
     private boolean isActive;
-    @Enumerated(EnumType.STRING)
     private Role role;
+    private PartyBranchRelated partyBranch;
 }

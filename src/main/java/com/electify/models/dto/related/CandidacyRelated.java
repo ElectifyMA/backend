@@ -1,8 +1,11 @@
-package com.electify.models.dto.basic;
+package com.electify.models.dto.related;
 
-import com.electify.models.dto.related.CandidateRelated;
+import com.electify.models.dto.basic.CandidateBasic;
+import com.electify.models.dto.basic.VoterBasic;
 import com.electify.models.enums.CandidacyType;
+import com.electify.serializers.ListLengthSerializer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,9 +20,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CandidacyBasic extends _AbstractBasic {
+public class CandidacyRelated {
     private CandidacyType type;
-    private CandidateRelated candidate;
-//    @JsonSerialize(using = ListLengthSerializer.class)
+    private CandidateBasic candidate;
+    @JsonSerialize(using = ListLengthSerializer.class)
     private List<VoterBasic> votes;
 }

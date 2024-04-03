@@ -41,18 +41,18 @@ public class JwtService {
     }
 
     private String buildToken(UserDetails userDetails, Map<String, Object> extraClaims, long expirationDate) {
-        List<String> roles = userDetails
+        String authority = userDetails
                 .getAuthorities()
-                .stream()
-                .map(GrantedAuthority::getAuthority)
-                .toList();
+                .iterator()
+                .next()
+                .toString();
 
         return Jwts
                 .builder()
                 .setClaims(extraClaims)
                 .setSubject(userDetails.getUsername())
                 .setExpiration(new Date(System.currentTimeMillis() + expirationDate))
-                .claim("roles", roles)
+                .claim("authority", authority)
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
